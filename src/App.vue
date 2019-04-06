@@ -1,29 +1,14 @@
 <template>
-  <div id="app" class="container">
+  <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <app-user></app-user>
-      </div>
+      <div class="col-xs-12"></div>
     </div>
   </div>
 </template>
 
 <script>
-import User from "./Components/User";
-export default {
-  name: "app",
-  data() {
-    return {};
-  },
-  components: {
-    appUser: User
-  }
-};
+export default {};
 </script>
 
 <style>
-div.component {
-  border: 1px solid black;
-  padding: 30px;
-}
 </style>

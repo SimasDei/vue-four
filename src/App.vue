@@ -1,20 +1,29 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div id="app" class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <app-user></app-user>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import User from "./Components/User";
 export default {
   name: "app",
   data() {
     return {};
+  },
+  components: {
+    appUser: User
   }
 };
 </script>
 
 <style>
-#app {
-  text-align: center;
+div.component {
+  border: 1px solid black;
+  padding: 30px;
 }
 </style>

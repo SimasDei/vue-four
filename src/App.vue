@@ -1,32 +1,46 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <br>
-                <button class="btn btn-primary">Load Blue Template</button>
-                <button class="btn btn-success">Load Green Template</button>
-                <button class="btn btn-danger">Load Red Template</button>
-                <hr>
-                <app-blue></app-blue>
-                <app-green></app-green>
-                <app-red></app-red>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <br>
+        <button @click="selectedComponent = 'appBlue'" class="btn btn-primary">Load Blue Template</button>
+        <button @click="selectedComponent = 'appGreen'" class="btn btn-success">Load Green Template</button>
+        <button @click="selectedComponent = 'appRed'" class="btn btn-danger">Load Red Template</button>
+        <hr>
+        <!-- <app-blue>
+          <p>Blue Content</p>
+        </app-blue>
+        <app-green>
+          <p>Green Content</p>
+        </app-green>
+        <app-red>
+          <p>Red Content</p>
+        </app-red>-->
+        <component :is="selectedComponent">
+          <p>Component Content</p>
+        </component>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-    import Blue from './components/Blue.vue';
-    import Green from './components/Green.vue';
-    import Red from './components/Red.vue';
+import Blue from "./components/Blue.vue";
+import Green from "./components/Green.vue";
+import Red from "./components/Red.vue";
 
-    export default {
-        components: {
-            appBlue: Blue,
-            appGreen: Green,
-            appRed: Red
-        }
-    }
+export default {
+  data() {
+    return {
+      selectedComponent: "appBlue"
+    };
+  },
+  components: {
+    appBlue: Blue,
+    appGreen: Green,
+    appRed: Red
+  }
+};
 </script>
 
 <style>

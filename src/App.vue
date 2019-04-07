@@ -1,38 +1,32 @@
 <template>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <button @click="selectedComponent = 'appQuote'">Quote</button>
-        <button @click="selectedComponent = 'appAuthor'">Author</button>
-        <button @click="selectedComponent = 'appNew'">New</button>
-        <hr>
-        <p>{{selectedComponent}}</p>
-        <component :is="selectedComponent"></component>
-        <!-- <app-quote>
-          <h2 slot="title">Quote Heading</h2>
-          <p slot="content">Quote Text</p>
-        </app-quote>-->
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <br>
+                <button class="btn btn-primary">Load Blue Template</button>
+                <button class="btn btn-success">Load Green Template</button>
+                <button class="btn btn-danger">Load Red Template</button>
+                <hr>
+                <app-blue></app-blue>
+                <app-green></app-green>
+                <app-red></app-red>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-import appQuote from "./Components/Quote.vue";
-import appAuthor from "./Components/Author";
-import appNew from "./Components/New";
-export default {
-  data: function() {
-    return {
-      selectedComponent: "appQuote"
-    };
-  },
-  components: {
-    appQuote,
-    appAuthor,
-    appNew
-  }
-};
+    import Blue from './components/Blue.vue';
+    import Green from './components/Green.vue';
+    import Red from './components/Red.vue';
+
+    export default {
+        components: {
+            appBlue: Blue,
+            appGreen: Green,
+            appRed: Red
+        }
+    }
 </script>
 
 <style>
